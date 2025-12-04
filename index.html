@@ -4,572 +4,684 @@
     <title>Definitieve Looplijst Wijk 122203</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body { font-family: sans-serif; line-height: 1.4; padding: 15px; background-color: #f4f4f9; }
-        h1 { color: #007bff; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+        /* BASE STIJLEN */
+        body { font-family: sans-serif; line-height: 1.4; padding: 0; background-color: #f4f4f9; padding-top: 60px; } /* Ruimte vrijhouden voor de vaste banner */
+        h1 { color: #007bff; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-top: 0; }
         h2 { color: #333; margin-top: 20px; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
-        .rit-container { background-color: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .rit-container { background-color: #fff; padding: 15px; margin: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .adres { display: flex; align-items: center; padding: 5px 0; border-bottom: 1px dotted #eee; }
         .adres input { margin-right: 10px; min-width: 20px; min-height: 20px; }
-        .fk-line { background-color: #fdd; color: #a00; font-weight: bold; } /* Volledige FK-regel, Rood & Vet */
+        
+        /* FK STIJL */
+        .fk-line { background-color: #fdd; color: #a00; font-weight: bold; }
         .fk-tag { margin-left: 5px; font-size: 0.9em; }
+
+        /* BANNER STIJL */
+        #progress-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #343a40; /* Donkergrijze achtergrond */
+            color: white;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #progress-banner button {
+            background-color: #dc3545; /* Rode knop */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        #progress-banner button:hover {
+            background-color: #c82333;
+        }
+        #count-display {
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
-    <h1>Folder Looplijst Wijk 122203 (Totaal: 257 Adressen)</h1>
-    <p><strong>F: 226 | FK: 31</strong></p>
-    <p>Start- en Eindpunt: Hertog Aelbrechtstraat 47, Hilversum</p>
-    <p><strong>De hele regel is rood en vet gedrukt bij FolderKiezer (FK).</strong></p>
 
-    <div class="rit-container">
-        <h2>📦 Rit 1: (52 Adressen)</h2>
+    <div id="progress-banner">
+        <div id="count-display">
+            Nog te lopen: <strong><span id="folders-remaining">257</span></strong> folders
+        </div>
+        <button id="reset-button">Reset Alle Vinkjes</button>
+    </div>
+
+    <div class="main-content">
+        <h1>Folder Looplijst Wijk 122203</h1>
+        <p>Totaal: 257 Adressen | F: 226 | FK: 31</p>
+        <p>Start- en Eindpunt: Hertog Aelbrechtstraat 47, Hilversum</p>
+        <p><strong>De hele regel is rood en vet gedrukt bij FolderKiezer (FK).</strong></p>
+
+        <div class="rit-container">
+            <h2>📦 Rit 1: (52 Adressen)</h2>
+        
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-001"><span class="adres-info">Berlagelaan 161</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-002"><span class="adres-info">Berlagelaan 163</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-003"><span class="adres-info">Berlagelaan 165</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-004"><span class="adres-info">Berlagelaan 173</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-005"><span class="adres-info">Berlagelaan 175</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-006"><span class="adres-info">Berlagelaan 191</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-007"><span class="adres-info">Berlagelaan 193 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-008"><span class="adres-info">Berlagelaan 203</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-009"><span class="adres-info">Berlagelaan 231</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-010"><span class="adres-info">Berlagelaan 237</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-011"><span class="adres-info">Berlagelaan 239 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-012"><span class="adres-info">Berlagelaan 245</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-013"><span class="adres-info">Berlagelaan 255</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-014"><span class="adres-info">Berlagelaan 259</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-015"><span class="adres-info">Berlagelaan 261</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-016"><span class="adres-info">Berlagelaan 269 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-017"><span class="adres-info">Berlagelaan 283</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-018"><span class="adres-info">Berlagelaan 291</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-019"><span class="adres-info">Fahrenheitlaan 1</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-020"><span class="adres-info">Fahrenheitlaan 2</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-021"><span class="adres-info">Fahrenheitlaan 3</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-022"><span class="adres-info">Fahrenheitlaan 4</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-023"><span class="adres-info">Fahrenheitlaan 6</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-024"><span class="adres-info">Fahrenheitlaan 8</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-025"><span class="adres-info">Fahrenheitlaan 11</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-026"><span class="adres-info">Fahrenheitlaan 12</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-027"><span class="adres-info">Fahrenheitlaan 13</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-028"><span class="adres-info">Fahrenheitlaan 15</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-029"><span class="adres-info">Fahrenheitlaan 16</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-030"><span class="adres-info">Fahrenheitlaan 18</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-031"><span class="adres-info">Fahrenheitlaan 19</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-032"><span class="adres-info">Fahrenheitlaan 21 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-033"><span class="adres-info">Fahrenheitlaan 22 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-034"><span class="adres-info">Fahrenheitlaan 23</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-035"><span class="adres-info">Fahrenheitlaan 24</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-036"><span class="adres-info">Fahrenheitlaan 25</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-037"><span class="adres-info">Fahrenheitlaan 26</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-038"><span class="adres-info">Fahrenheitlaan 28</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-039"><span class="adres-info">Fahrenheitlaan 29</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-040"><span class="adres-info">Fahrenheitlaan 32</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-041"><span class="adres-info">Fahrenheitlaan 33</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-042"><span class="adres-info">Fahrenheitlaan 35</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-043"><span class="adres-info">Fahrenheitlaan 38</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-044"><span class="adres-info">Simon Stevinweg 109</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-045"><span class="adres-info">Simon Stevinweg 111</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-046"><span class="adres-info">Simon Stevinweg 115</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-047"><span class="adres-info">Simon Stevinweg 117 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-048"><span class="adres-info">Simon Stevinweg 119 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-049"><span class="adres-info">Simon Stevinweg 123</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-050"><span class="adres-info">Simon Stevinweg 125</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-051"><span class="adres-info">Simon Stevinweg 129</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-052"><span class="adres-info">Simon Stevinweg 131</span></div>
+            
+        </div>
+        
+        <div class="rit-container">
+            <h2>📦 Rit 2: (52 Adressen)</h2>
+        
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-053"><span class="adres-info">Simon Stevinweg 135</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-054"><span class="adres-info">Simon Stevinweg 137</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-055"><span class="adres-info">Simon Stevinweg 141 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-056"><span class="adres-info">Simon Stevinweg 143</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-057"><span class="adres-info">Simon Stevinweg 144</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-058"><span class="adres-info">Simon Stevinweg 145</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-059"><span class="adres-info">Simon Stevinweg 147</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-060"><span class="adres-info">Simon Stevinweg 149</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-061"><span class="adres-info">Simon Stevinweg 153</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-062"><span class="adres-info">Simon Stevinweg 155</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-063"><span class="adres-info">Lieven de Keylaan 53 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-064"><span class="adres-info">Lieven de Keylaan 54-B2</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-065"><span class="adres-info">Lieven de Keylaan 54-B4 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-066"><span class="adres-info">Lieven de Keylaan 54-D4 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-067"><span class="adres-info">Lieven de Keylaan 54-D5 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-068"><span class="adres-info">Lieven de Keylaan 54-D7</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-069"><span class="adres-info">Lieven de Keylaan 56</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-070"><span class="adres-info">Lieven de Keylaan 57 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-071"><span class="adres-info">Lieven de Keylaan 58</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-072"><span class="adres-info">Lieven de Keylaan 59</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-073"><span class="adres-info">Lieven de Keylaan 61</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 63</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-075"><span class="adres-info">Lieven de Keylaan 65 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-076"><span class="adres-info">Lieven de Keylaan 73</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-077"><span class="adres-info">Lieven de Keylaan 75</span></div>
+            
+            <div class="adres"><input type="checkbox" data-folder-type="F" id="chk-078"><span class="adres-info">Lieven de Keylaan 77</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 79</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-080"><span class="adres-info">Lieven de Keylaan 81 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 87</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 91</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 93</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 95</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 97</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 101</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 103</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 1</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 2</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-089"><span class="adres-info">Outshoornlaan 3 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 5</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-091"><span class="adres-info">Outshoornlaan 7 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 9</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 10</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 13</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 15</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 16</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 17</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 18</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 20</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 22</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 26</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 34</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 36</span></div>
+            
+        </div>
+        
+        <div class="rit-container">
+            <h2>📦 Rit 3: (52 Adressen)</h2>
+        
+            <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 38</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 1</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 3</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 5</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 7</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 9</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 11</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 13</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 15</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 17</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 19</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 25</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 27</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 37</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-119"><span class="adres-info">Pieter Postlaan 41 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 43</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 45</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 47</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-123"><span class="adres-info">Pieter Postlaan 49 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 51</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 53</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 57</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 59</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 61</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 63</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 65</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 67</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 69</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 71</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 73</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 1</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 2</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 3</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 6</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 7</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 8</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 9</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 11</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 12</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 15</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 17</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-147"><span class="adres-info">Celsiuslaan 18 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 20</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 21</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 22</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 23</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 26</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 27</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 29</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 30</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 31</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 32</span></div>
+            
+        </div>
+        
+        <div class="rit-container">
+            <h2>📦 Rit 4: (52 Adressen)</h2>
+        
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 33</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-157"><span class="adres-info">Celsiuslaan 35 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 37</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 39</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 40</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 41</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 2</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 3</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 4</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 8</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 9</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-168"><span class="adres-info">Raumurlaan 10 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 18</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-170"><span class="adres-info">Raumurlaan 20 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 21</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 23</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 25</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 26</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 27</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 28</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 29</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 30</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 32</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 32</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 34</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 36</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-183"><span class="adres-info">Snelliuslaan 38 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 42</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 48</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 52</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-187"><span class="adres-info">Snelliuslaan 56 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 68</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-189"><span class="adres-info">Snelliuslaan 72 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 76</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 74</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 76</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 78</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-195"><span class="adres-info">Johannes Geradtsweg 80 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 86</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 92</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 93</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-199"><span class="adres-info">Johannes Geradtsweg 100 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 102</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-201"><span class="adres-info">Johannes Geradtsweg 110 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 116</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 118</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 126</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 128</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 130</span></div>
+            
+        </div>
+        
+        <div class="rit-container">
+            <h2>📦 Rit 5: (49 Adressen)</h2>
     
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 161</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 163</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 165</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 173</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 175</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 191</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Berlagelaan 193 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 203</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 231</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 237</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Berlagelaan 239 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 245</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 255</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 259</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 261</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Berlagelaan 269 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 283</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Berlagelaan 291</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 1</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 2</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 3</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 4</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 6</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 8</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 11</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 12</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 13</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 15</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 16</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 18</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 19</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 21 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 22 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 23</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 24</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 25</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 26</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 28</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 29</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 32</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 33</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 35</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Fahrenheitlaan 38</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 109</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 111</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 115</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Simon Stevinweg 117 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Simon Stevinweg 119 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 123</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 125</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 129</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 131</span></div>
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 138</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 144</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 5</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 6</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 7</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 12</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 13</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 14</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 15</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 16</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 18</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 19</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 20</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 21</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 22</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 23</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 27</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 30</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 31</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 32</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 33</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 34</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 35</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 36</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 39</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 42</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 44</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 47</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 48</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 55</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 56</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 58</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 60</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 62</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-243"><span class="adres-info">V Kretschmar van Veenln 63 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 67</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 68</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-246"><span class="adres-info">V Kretschmar van Veenln 72 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-247"><span class="adres-info">V Kretschmar van Veenln 76 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 5</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-249"><span class="adres-info">Jacob van Campenln 7 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 15</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 19</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 21</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 23</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 25</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 27</span></div>
+            
+            <div class="adres fk-line"><input type="checkbox" data-folder-type="FK" id="chk-256"><span class="adres-info">Jacob van Campenln 29 <span class="fk-tag">[FK]</span></span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 31</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 37</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 61</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 69</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 71</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 73</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 74</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 77</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 81</span></div>
+            
+            <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 85</span></div>
+            
+        </div>
         
     </div>
     
-    <div class="rit-container">
-        <h2>📦 Rit 2: (52 Adressen)</h2>
-    
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 135</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 137</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Simon Stevinweg 141 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 143</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 144</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 145</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 147</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 149</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 153</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Simon Stevinweg 155</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 53 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 54-B2</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 54-B4 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 54-D4 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 54-D5 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 54-D7</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 56</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 57 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 58</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 59</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 61</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 63</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 65 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 73</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 75</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 77</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 79</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 81 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 87</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 91</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 93</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 95</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 97</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 101</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Lieven de Keylaan 103</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 1</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 2</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Outshoornlaan 3 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 5</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Outshoornlaan 7 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 9</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 10</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 13</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 15</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 16</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 17</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 18</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 20</span></div>
-        
-    </div>
-    
-    <div class="rit-container">
-        <h2>📦 Rit 3: (52 Adressen)</h2>
-    
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 22</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 26</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 34</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 36</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Outshoornlaan 38</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 1</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 3</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 5</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 7</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 9</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 11</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 13</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 15</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 17</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 19</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 25</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 27</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 37</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Pieter Postlaan 41 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 43</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 45</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 47</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Pieter Postlaan 49 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 51</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 53</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 57</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 59</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 61</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 63</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 65</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 67</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 69</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 71</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Pieter Postlaan 73</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 1</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 2</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 3</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 6</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 7</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 8</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 9</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 11</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 12</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 15</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 17</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Celsiuslaan 18 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 20</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 21</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 22</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 23</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 26</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 27</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 29</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 30</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 31</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 32</span></div>
-        
-    </div>
-    
-    <div class="rit-container">
-        <h2>📦 Rit 4: (52 Adressen)</h2>
-    
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 33</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Celsiuslaan 35 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 37</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 39</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 40</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Celsiuslaan 41</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 2</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 3</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 4</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 8</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 9</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Raumurlaan 10 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 18</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Raumurlaan 20 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 21</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 23</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 25</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 26</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 27</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 28</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 29</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 30</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Raumurlaan 32</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 32</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 34</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 36</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Snelliuslaan 38 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 42</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 48</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 52</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Snelliuslaan 56 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 68</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Snelliuslaan 72 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Snelliuslaan 76</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 74</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 76</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 78</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 80 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 86</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 92</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 93</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 100 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 102</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 110 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 116</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 118</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 126</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 128</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 130</span></div>
-        
-    </div>
-    
-    <div class="rit-container">
-        <h2>📦 Rit 5: (49 Adressen)</h2>
-    
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 138</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Johannes Geradtsweg 144</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 5</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 6</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 7</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 12</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 13</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 14</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 15</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 16</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 18</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 19</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 20</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 21</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 22</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 23</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 27</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 30</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 31</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 32</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 33</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 34</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 35</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 36</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 39</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 42</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 44</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 47</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 48</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 55</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 56</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 58</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 60</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 62</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 63 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 67</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 68</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 72 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">V Kretschmar van Veenln 76 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 5</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Jacob van Campenln 7 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 15</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 19</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 21</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 23</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 25</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 27</span></div>
-        
-        <div class="adres fk-line"><input type="checkbox"><span class="adres-info">Jacob van Campenln 29 <span class="fk-tag">[FK]</span></span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 31</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 37</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 61</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 69</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 71</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 73</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 74</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 77</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 81</span></div>
-        
-        <div class="adres"><input type="checkbox"><span class="adres-info">Jacob van Campenln 85</span></div>
-        
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const TOTAL_FOLDERS = 257;
+            const checkboxes = document.querySelectorAll('.adres input[type="checkbox"]');
+            const resetButton = document.getElementById('reset-button');
+            const remainingDisplay = document.getElementById('folders-remaining');
+            const STORAGE_KEY = 'looplijst_vinkjes_status';
+
+            // Functie om de resterende folders te berekenen en bij te werken
+            function updateCount() {
+                let checkedCount = 0;
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        checkedCount++;
+                    }
+                });
+                remainingDisplay.textContent = TOTAL_FOLDERS - checkedCount;
+            }
+
+            // Functie om de status op te slaan in localStorage
+            function saveState() {
+                const checkedStates = {};
+                checkboxes.forEach(checkbox => {
+                    checkedStates[checkbox.id] = checkbox.checked;
+                });
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedStates));
+            }
+
+            // Functie om de status te laden uit localStorage
+            function loadState() {
+                const savedState = localStorage.getItem(STORAGE_KEY);
+                if (savedState) {
+                    const checkedStates = JSON.parse(savedState);
+                    checkboxes.forEach(checkbox => {
+                        if (checkedStates[checkbox.id] !== undefined) {
+                            checkbox.checked = checkedStates[checkbox.id];
+                        }
+                    });
+                }
+                updateCount();
+            }
+
+            // Event listener voor elke checkbox om status op te slaan en telling bij te werken
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    saveState();
+                    updateCount();
+                });
+            });
+
+            // Event listener voor de resetknop
+            resetButton.addEventListener('click', () => {
+                if (confirm('Weet u zeker dat u alle vinkjes wilt verwijderen?')) {
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    localStorage.removeItem(STORAGE_KEY);
+                    updateCount();
+                }
+            });
+
+            // Status laden bij het opstarten van de site (vinkjes blijven staan bij refresh)
+            loadState();
+        });
+    </script>
     
 </body>
 </html>
